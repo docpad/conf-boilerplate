@@ -1,0 +1,5 @@
+---
+layout: default
+---
+
+<%- @partial("meetup.html.eco", @, {meetup:@getMeetup(@document)}) %>

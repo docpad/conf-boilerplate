@@ -2,12 +2,4 @@
 layout: default
 ---
 
-<% for section in @sections : %>
-  <!-- <%= section.toUpperCase() %> -->
-
-  <section class="<%= section %>" id="<%= section %>">
-    <%- @partial("section/#{section}.html.eco", @) %>
-  </section>
-
-  <!-- / <%= section.toUpperCase() %> -->
-<% end %>
+<%- @partial("meetup.html.eco", @, {meetup:@getMeetup()}) %>

@@ -1,24 +1,31 @@
 {
-  "name": "ConfBoilerplate",
-  "version": "0.2.0",
+  "title": "Meetup Boilerplate",
+  "name": "meetup-boilerplate",
+  "version": "0.3.0",
   "description": "A kickstart to create websites for conference/events.",
-  "homepage": "http://confboilerplate.com",
+  "homepage": "http://docpad.github.io/meetup-boilerplate/",
   "repository": {
-    "type" : "git",
-    "url" : "http://github.com/braziljs/conf-boilerplate.git"
+    "type": "git",
+    "url": "https://github.com/docpad/meetup-boilerplate.git"
   },
   "engines": {
-    "node": ">0.8.x",
-    "npm": "1.1.x"
+    "node": "0.10",
+    "npm": "1.3"
   },
   "scripts": {
     "test": "docpad generate"
   },
   "dependencies": {
-    "docpad-plugin-eco": "2.0.2",
-    "docpad-plugin-marked": "2.1.1",
-    "docpad-plugin-partials": "2.6.1",
-    "docpad-plugin-less": "2.1.3",
-    "docpad-plugin-ghpages": "2.0.2"
+    "docpad-plugin-eco": "~2.0.2",
+    "docpad-plugin-marked": "~2.1.2",
+    "docpad-plugin-partials": "~2.8.1",
+    "docpad-plugin-less": "~2.2.0",
+    "docpad-plugin-ghpages": "~2.4.0",
+    "docpad": "~6.54.4",
+    "extendr": "~2.1.0",
+    "docpad-plugin-moment": "~2.0.2"
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "~2.5.3"
   }
 }

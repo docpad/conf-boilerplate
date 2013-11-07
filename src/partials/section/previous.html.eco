@@ -1,0 +1,34 @@
+<h2 class="section-title"><%= @labels['previous'] %></h2>
+<% if @getCollection('meetups').length isnt 1: %>
+	<div class="section-description">
+		<p>This isn't our only event that we've held. Here's the full listing.</p>
+	</div>
+	<div class="schedule-tbl">
+		<table>
+			<thead>
+				<tr>
+					<th class="schedule-time">Date</th>
+					<th class="schedule-slot">Title</th>
+					<th class="schedule-description">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<% for meetup in @getCollection('meetups').toJSON().map((meetup)=>@getMeetup(meetup)): %>
+					<tr>
+						<td class="schedule-time"><%- meetup.date.toDateString() %></td>
+						<td class="schedule-slot">
+							<%- meetup.name %>
+						</td>
+						<td class="schedule-description"><%- meetup.description %></td>
+					</tr>
+				<% end %>
+
+			</tbody>
+		</table>
+	</div>
+<% else: %>
+	<div class="section-description">
+		<p>This is our first event!</p>
+	</div>
+<% end %>

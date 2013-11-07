@@ -1,9 +1,19 @@
 <h2 class="section-title"><%= @labels['location'] %></h2>
 
-<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-  <span itemprop="streetAddress"><%= @conf.address %>. </span>
-  <span itemprop="addressLocality"><%= @conf.city %></span>,
-  <span itemprop="addressRegion"> <%= @conf.state %></span>
-</p>
+<div class="section-description">
+	<p>
+		<% if @meetup.time: %>
+			<span><%= @meetup.time %></span>
+		<% end %>
+		<span><%= @moment(@meetup.date).format('dddd, Do MMMM YYYY') %></span>
+	</p>
+	<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="name"><%= @meetup.venue %></span>.
+		<span itemprop="streetAddress"><%= @meetup.address %></span>,
+		<span itemprop="addressLocality"><%= @meetup.city %></span>,
+		<span itemprop="addressRegion"><%= @meetup.state %></span>,
+		<span itemprop="addressCountry"><%= @meetup.country %></span>
+	</p>
+</div>
 
-<div id="map-canvas" class="location-area" data-address="<%= @conf.address %>"></div>
+<div id="map-canvas" class="location-area" data-address="<%= @meetup.fullAddress %>"></div>

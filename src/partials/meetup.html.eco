@@ -1,0 +1,69 @@
+<!-- NAVIGATION -->
+<nav id="nav">
+	<ul class="wrapper">
+		<% for section in @site.sections: %>
+			<li class="nav-item">
+				<a href="#<%= section %>" title="<%= @labels[section] %>" class="nav-link"><%= @labels[section] %></a>
+			</li>
+		<% end %>
+	</ul>
+</nav>
+<hr/>
+
+<!-- HEADER -->
+<header class="header">
+	<div class="wrapper">
+		<h1 class="logo-name">
+			<a class="logo-link" href="<%= @site.url %>" title="Conference name" itemprop="name">
+				<%= @site.name %>
+			</a>
+		</h1>
+		<h2 class="tagline">
+			<% if @meetup.name isnt @site.name: %>
+				<span class="meetup-name">
+					<%= @meetup.name %>
+				</span>
+			<% end %>
+			<span class="meetup-date"><%= @moment(@meetup.date).format('Do MMMM YYYY') %></span>
+			<span class="meetup-location"><%= @meetup.venue %>, <%= @meetup.city %></span>
+		</h2>
+
+		<% if @meetup.price or @meetup.callToAction: %>
+			<div class="call-action-area">
+				<% if @meetup.price: %>
+					<span class="price">
+						<% if @meetup.date >= Date(): %>
+							Only
+						<% else: %>
+							Was
+						<% end %>
+						<%= @meetup.price %>
+					</span>
+				<% end %>
+
+				<% if @meetup.callToAction: %>
+					<a href="<%= @meetup.callToAction.link %>" class="call-action-link" title="<%= @meetup.callToAction.text %>">
+						<%= @meetup.callToAction.text %>
+					</a>
+				<% end %>
+			</div>
+		<% end %>
+
+	</div>
+</header>
+<hr>
+<!-- / HEADER -->
+
+<!-- SECTIONS -->
+<div class="content" id="content">
+	<div class="wrapper">
+		<% for section in @site.sections : %>
+			<!-- <%= section.toUpperCase() %> -->
+			<section class="section <%= section %>" id="<%= section %>">
+				<%- @partial("section/#{section}.html.eco") %>
+			</section>
+			<!-- / <%= section.toUpperCase() %> -->
+		<% end %>
+	</div>
+</div>
+<!-- /SECTIONS -->
