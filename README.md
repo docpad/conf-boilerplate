@@ -5,7 +5,7 @@ THIS IS BEING MODIFIED BY THE DOCPAD TEAM TO WORK FOR MEETUPS. STILL A BIT TO GO
 
 ![image](http://f.cl.ly/items/2i1m3z3i1a3Z0I1X472B/logo.jpg)
 
-An iniciative of [BrazilJS Foundation](http://braziljs.org) to help those people who wants to organize conferences/events and don't have too much time to create the website of it.
+An initiative of [BrazilJS Foundation](http://braziljs.org) to help those people who wants to organize conferences/events and don't have too much time to create the website of it.
 
 ## Table of contents
 
